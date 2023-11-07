@@ -7,6 +7,47 @@
 </head>
 <html>
    <body>
+        <div class="container-fluid px-0">
+            <nav class="navbar">
+
+                <a class="navbar-brand" href="{{ url_for('index') }}">
+                    <img class="d-block mx-auto mb-4" src="{{ url_for('static', filename='images/logo.png') }}" alt="Gennaker WebApp Logo" width="64" height="64"/> 
+                    <h1 class="display-6 fw-bold text-primary">Gennaker Retail</h1>
+                </a>
+
+                <div class="collapse navbar-menu">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{{ url_for('hello') }}">Programs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('hello') }}">Users</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('hello') }}">Coaching</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('hello') }}">Analytics</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="navbar-icons">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <img class="d-block mx-auto mb-4" src="{{ url_for('static', filename='images/shoppingcart.png') }}" alt="Shopping Cart" width="32" height="32"/>                
+                        </li>
+                        <li class="nav-item">
+                            <img class="d-block mx-auto mb-4" src="{{ url_for('static', filename='images/shoppingcart.png') }}" alt="Shopping Cart" width="32" height="32"/>                
+                        </li>
+                        <li class="nav-item">
+                            <img class="d-block mx-auto mb-4" src="{{ url_for('static', filename='images/shoppingcart.png') }}" alt="Shopping Cart" width="32" height="32"/>                
+                        </li>
+                    </ul>
+                </div>
+                
+            </nav>
+        </div>
         {% block body %}{% endblock %}
    </body>
 </html>

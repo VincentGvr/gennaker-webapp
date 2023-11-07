@@ -1,7 +1,27 @@
 import os
+import azure.cosmos.documents as documents
+import azure.cosmos.cosmos_client as cosmos_client
+import azure.cosmos.exceptions as exceptions
+from azure.cosmos.partition_key import PartitionKey
+
+import config
+import json
 
 from flask import (Flask, redirect, render_template, request,
                    send_from_directory, url_for)
+
+
+# Cosmos Part #
+HOST = config.settings['host']
+MASTER_KEY = config.settings['master_key']
+DATABASE_ID = config.settings['database_id']
+
+client = cosmos_client.CosmosClient(HOST, {'masterKey': MASTER_KEY}, user_agent="AzureManagement", user_agent_overwrite=True)
+
+db = client.get_database_client(DATABASE_ID)
+container = db.get_container_client(CONTAINER_ID)
+
+# End of Cosmos Part #
 
 app = Flask(__name__)
 
